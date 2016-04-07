@@ -1,16 +1,7 @@
-require "./lib/offset"
-require "./lib/encryption"
-require "./lib/key"
+require './lib/offset'
+require './lib/enigma'
 
-class Enigma
-  attr_accessor :message
-  attr_reader :default_character_map
-
-  def initialize(message)
-    @message = message
-    @default_character_map = [*"a".."z"]+[*0..9]+[" ", ".", ","]
-    @offsets = Offset.new
-  end
+class Encryption
 
   def encrypt(message, a_rot, b_rot, c_rot, d_rot)
     start = 0
